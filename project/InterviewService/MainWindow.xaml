@@ -1,0 +1,45 @@
+﻿<Window x:Class="Microsoft.CognitiveServices.SpeechRecognition.MainWindow"
+        x:Name="_mainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Interview Service" Margin="5,5,5,5" MinWidth="800" Loaded="_mainWindow_loaded" Closed="_mainWindow_Closed">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="200"/>
+            <ColumnDefinition Width="*" MinWidth="200"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">Interview with Cognitive Services of Speech</Label>
+
+        <Grid Grid.Row="0" Grid.Column="1" Margin="0,0,10,0">
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Width="364">Logs:</Label>
+            <StackPanel Orientation="Horizontal" Margin="49,0,0,0">
+                <!--Icon or statue-->
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="gridApp" Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <GroupBox x:Name="_cameraView" Grid.Row="0" Margin="10,10,10,67" Padding="0, 0, 10, 10" Grid.RowSpan="2">
+                <StackPanel x:Name="cameraPanel" Orientation="Vertical" Background="#FFA4A2A2" Margin="5,12,-5,-6"/>
+            </GroupBox>
+            <Grid Grid.Row="2" Margin="10, 0, 10, 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="_startButton" Grid.Column="0" Content="Start _Interview" Click="StartButton_Click" Margin="5" Padding="5"/>
+                <Button x:Name="_stopButton" Grid.Column="1" Content="Stop _Interview" Click="StopButton_Click" Margin="5" Padding="5" IsEnabled="False"/>
+            </Grid>
+            <CheckBox x:Name="useCamera" Content="Use camera" HorizontalAlignment="Left" Margin="284,12,0,0" Grid.Row="2" VerticalAlignment="Top" Checked="useCamera_Checked"/>
+        </Grid>
+        <TextBox x:Name="_logText" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalScrollBarVisibility="Visible" Margin="0, 10, 10, 10"/>
+    </Grid>
+</Window>
